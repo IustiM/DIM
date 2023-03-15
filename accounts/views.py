@@ -2,13 +2,12 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.forms import inlineformset_factory
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import Group
+from django.shortcuts import render
 
+from .decorators import *  # unauthenticated_user, allowed_user, admin_only
 from .filters import *  # OrderFilter
 from .forms import *  # OrderForm, CreateUserForm
 from .models import *
-from .decorators import *  # unauthenticated_user, allowed_user, admin_only
 
 
 @unauthenticated_user
